@@ -83,7 +83,7 @@ int backword_difference(double step, double x)
 int five_point(double step, double x)
 {
 	double result = 0;
-	result = (f(x - 2 * step) - 8 * f(x - step) + 8 * f(x + step) - f(x - 2 * step) ) / (12 * step);
+	result = (f(x - 2 * step) - 8 * f(x - step) + 8 * f(x + step) - f(x + 2 * step) ) / (12 * step);
 	printf("The \"5-point\" formula results is %.13lf \n\r",result);
 	return 0;
 }
@@ -91,7 +91,7 @@ int five_point(double step, double x)
 int second_order(double step, double x)
 {
 	double result = 0;
-	result = (f(x + step) - 2 * f(x) + f(x - step)) / (x * x);
+	result = (f(x + step) - 2 * f(x) + f(x - step)) / (step * step);
 	printf("The second order difference results is %.13lf \n\r",result);
 	return 0;
 }
