@@ -5,6 +5,7 @@ Copyleft by Yumeng Xu
 ## Chapter 1: Basic Mathematic Computation
 
 * Numerical differentiation
+* Numerical integration
 
 ## License
 
