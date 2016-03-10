@@ -2,8 +2,10 @@
 #include <math.h>
 
 double f(double x);
+double dif(double x);
 int search(double epsilon);
 int dichotomy(double epsilon);
+int newton(double epsilon);
 
 int main()
 {
@@ -22,6 +24,7 @@ int main()
 	switch (option) {
 		case 1: search(epsilon); break;
 		case 2: dichotomy(epsilon); break;
+		case 3: newton(epsilon); break;
 	}
 
 	return 0;
@@ -30,6 +33,11 @@ int main()
 double f(double x)
 {
 	return (x * x - 5);
+}
+
+double dif(double x)
+{
+	return (2 * x);
 }
 
 int search(double epsilon)
@@ -77,5 +85,21 @@ int dichotomy(double epsilon)
 	}
 
 	printf("The root is near %lf \n\r",(min + max) / 2);
+	return 0;
+}
+
+int newton(double epsilon)
+{
+	double x;
+
+	printf("Please input the estimate value of the root: \n\r");
+	scanf("%lf",&x);
+
+	while (fabs(f(x)) > epsilon) {
+		x = x - f(x) / dif(x);
+	}
+
+	printf("The root is near %lf \n\r",x);
+
 	return 0;
 }
