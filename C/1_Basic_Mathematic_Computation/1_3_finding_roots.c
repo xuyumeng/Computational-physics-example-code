@@ -57,17 +57,16 @@ int search(double epsilon)
 
 int dichotomy(double epsilon)
 {
-	double x;
 	double min, max;
-	  double tmp;
+	double tmp;
 
 	printf("Please input the range where the root located: \n\r");
 	scanf("%lf %lf",&min,&max);
 
 	tmp = f((min + max) / 2);
 
-	if (tmp > epsilon) {
-		while (max - min < epsilon) {
+	if (fabs(tmp) > epsilon) {
+		while (max - min > epsilon) {
 			if (tmp * f(min) > 0) {
 				min = (min + max) / 2;
 			} else {
@@ -77,6 +76,6 @@ int dichotomy(double epsilon)
 		}
 	}
 
-	printf("The root is near %lf",tmp);
+	printf("The root is near %lf \n\r",(min + max) / 2);
 	return 0;
 }
