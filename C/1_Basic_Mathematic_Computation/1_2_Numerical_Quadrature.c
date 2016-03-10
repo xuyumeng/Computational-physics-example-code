@@ -82,7 +82,7 @@ int simpsons_rule(int n, double min, double max)
 		}
 	}
 
-	result = 2 / 3 * even_part + 4 / 3 * odd_part + 1 / 3 * (f(min) + f(max));
+	result = 2.0 / 3.0 * even_part + 4.0 / 3.0 * odd_part + 1 / 3 * (f(min) + f(max));
 
 	printf("The result of Simpson's Rule is %.13lf \n\r",result * step);
 
