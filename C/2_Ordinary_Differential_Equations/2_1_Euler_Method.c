@@ -29,6 +29,7 @@ int main()
 	switch (method) {
 		case 1: print_eular(x_0,y_0,x_n,step);break;
 	}
+	return 0;
 }
 
 double f(double x, double y)
@@ -49,9 +50,8 @@ double eular(double x_0, double y_0, double x_n, double step)
 	double x = x_0;
 
 	for (int i = 0; i * step < (x_n - x_0); i++) {
-		x = x + step * i;
+		x += step;
 		y = y + step * f(x,y);
-		printf("%lf,%lf\n\r",x,y);
 	}
 
 	return y;
