@@ -14,7 +14,7 @@ int main()
 	int times;
    	double step;
 
-	printf("Please input the data in follow order: \n\r (x_0 y_0 x_n step) \n\r");
+	printf("Please input the data in follow order: \n\r (times step) \n\r");
 	scanf("%d %lf",&times,&step);
 
 	lorentz(times,step);
@@ -43,7 +43,7 @@ int lorentz(int times, double step)
 	double z = -10;
 	FILE* fp;
 
-	fp = fopen("lorentz.csv","w+");
+	fp = fopen("data/lorentz.csv","w+");
 	for (int i = 0; i < times; i++) {
 		x += step * f_x(x,y);
 		y += step * f_y(x,y,z);
